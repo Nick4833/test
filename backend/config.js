@@ -1,10 +1,9 @@
 const config = {
     db: {
-      host: "localhost",
-      user: "root",
-      password: "kingdeath2580",
-      database: "test",
-      connectTimeout: 60000
+      host: process.env.HOST,
+      user: process.env.USER,
+      password: process.env.PASSWORD,
+      database: process.env.DATABASE,
     }
 };
 
