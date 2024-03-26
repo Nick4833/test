@@ -20,7 +20,7 @@ function App() {
       throw new Error("Failed to fetch data");
     }
     const body = await res.json();
-    const pageAmount = Math.floor(body.total / 10);
+    let pageAmount = body.total > 0 ? Math.ceil(body.total / 10) - 1 : 0;
     console.log(pageAmount);
     setPageAmount(pageAmount);
   }
