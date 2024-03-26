@@ -43,12 +43,13 @@ const Login = () => {
     };
     if (name.length != 0 && pass.length != 0) {
       const res = await fetch("http://localhost:80/user/login", settings);
+      console.log(res)
       if (!res.ok) {
-        toast.error("Something went wrong.", {
+        toast.error("Name or Password is incorrect.", {
           position: "bottom-right",
           theme: "colored",
         });
-      }
+      } else{
       const body = await res.json();
       localStorage.setItem("jwt", body.token);
       setId(body.userId);
@@ -56,8 +57,10 @@ const Login = () => {
         position: "bottom-right",
         theme: "colored",
       });
-      navigate("/")
+      
+    navigate("/")
     }
+  }
   }
 
   return (
