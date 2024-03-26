@@ -55,7 +55,7 @@ const PostDetail = () => {
       position: "bottom-right",
       theme: "colored",
     });
-    navigate(-1);
+    setTimeout(()=> {navigate("/")},800); 
   }
 
   return (
